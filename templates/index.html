@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="app">
+
+        <header>
+        <h1>💰 Minhas Despesas</h1>
+        </header>
+
+        <main>
+
+        <section class="form-section">
+            <h2>Nova despesa</h2>
+
+            <form id="formDespesa">
+            <input type="text" id="descricao" placeholder="Descrição" required>
+
+            <input type="number" step="0.01" id="valor" placeholder="Valor (R$)" required>
+
+            <input type="text" id="data" placeholder="Data (DD/MM/AAAA)">
+
+            <input type="number" id="categoria_id" placeholder="ID da Categoria" required>
+
+            <button type="submit">Salvar</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Despesas</h2>
+            <div id="listaDespesas" class="lista"></div>
+        </section>
+
+        </main>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

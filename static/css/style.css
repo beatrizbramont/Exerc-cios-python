@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.app {
+    width: 375px;
+    min-height: 90vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0 20px;
+    color: #2c3e50;
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+.form-section h2,
+.list-section h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+form input:focus {
+    border-color: #4caf50;
+}
+
+form button {
+    margin-top: 5px;
+    padding: 12px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #43a047;
+}
+
+.list-section {
+    margin-top: 25px;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Card de despesa */
+.card {
+    background: #f9fafb;
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .info p {
+    font-size: 14px;
+    color: #333;
+}
+
+.card .info small {
+    color: #777;
+}
+
+.card .valor {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.card button {
+    background: #e53935;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.card button:hover {
+    background: #c62828;
+}
