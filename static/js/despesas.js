@@ -1,6 +1,6 @@
 const API = "/despesas";
-const params = new URLSearchParams(window.location.search);
-const idEdicao = params.get("id");
+const path = window.location.pathname;
+const idEdicao = path.split("/").pop();
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -215,7 +215,7 @@ function gerarEventosFormulario() {
     });
 
       alert("Despesa atualizada com sucesso!");
-      window.location.href = "/minhas-despesas";
+      window.location.href = "/minhasDespesas";
 
     } else {
         await criarDespesa(despesa);

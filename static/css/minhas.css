@@ -1,65 +1,149 @@
 body {
     font-family: Inter, Arial, sans-serif;
-    background: #f6f6f6;
+    background: #c29898;
     padding: 30px;
-    background-color: #c29898;
+    color: #333;
 }
 
 h1 {
     margin-bottom: 25px;
-    font-weight: 600;
-    color: #333;
+    font-weight: 700;
+    color: #4a2c2c;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: #fde6e6;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 th {
-    background: #fafafa;
+    background: #fff2f2;
     font-weight: 600;
     text-align: left;
-    color: #444;
+    color: #552929;
+    font-size: 15px;
 }
 
 th, td {
-    padding: 15px;
-    border-bottom: 1px solid #e5e5e5;
-    vertical-align: top;
+    padding: 14px 18px;
+    border-bottom: 1px solid #f3d4d4;
 }
 
-.tabela-parcelas {
+tbody tr:hover {
+    background: #ffecec;
+}
+
+.nao-parcelado {
+    background: #fef3c7;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+button.ver-parcelas {
+    background: #d97706;
+    color: #fff;
+    padding: 7px 12px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+button.ver-parcelas:hover {
+    background: #b45309;
+}
+
+button.editar {
+    background: #60a5fa;
+    color: #fff;
+}
+
+button.editar:hover {
+    background: #3b82f6;
+}
+
+#modal-parcelas {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(2px);
+    overflow: auto;
+    padding-top: 40px; 
+}
+
+.modal-content {
+    background: #c29898;
+    margin: auto;
+    padding: 20px;
+    border-radius: 14px;
+    width: 70%;
+    max-width: 800px;
+    max-height: 70vh; 
+    overflow-y: auto; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#modal-titulo {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #4a2c2c;
+}
+
+.modal-fechar {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-fechar:hover {
+    color: #b91c1c;
+}
+
+.modal-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.tabela-parcelas th {
-    background: #ffffff;
-    font-size: 13px;
-    padding: 8px;
-    color: #666;
-}
-
-.tabela-parcelas td {
-    padding: 8px;
+.modal-table th {
+    background: #f2f2f2;
     font-size: 14px;
 }
 
-.tabela-parcelas tr:nth-child(even) {
+.modal-table td {
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.modal-table tr:nth-child(even) {
     background: #fafafa;
 }
 
-.tabela-parcelas tr:nth-child(odd) {
-    background: #fff;
-}
-
 .parcela.pago {
-    background: #d1fae5 !important; 
+    background: #d1fae5 !important;
 }
 
 .parcela.atrasado {
@@ -67,7 +151,7 @@ th, td {
 }
 
 .parcela.pendente {
-    background: #fef3c7 !important; 
+    background: #fef3c7 !important;
 }
 
 button {
@@ -80,7 +164,6 @@ button {
     transition: .2s;
 }
 
-/* Botão pagar (verde) */
 button.pagar {
     background: #4ade80;
     color: #fff;
@@ -90,7 +173,6 @@ button.pagar:hover {
     background: #22c55e;
 }
 
-/* Botão atrasado (vermelho) */
 button.atrasado-btn {
     background: #f87171;
     color: #fff;
@@ -100,13 +182,11 @@ button.atrasado-btn:hover {
     background: #ef4444;
 }
 
-/* Botão editar despesa (azul) */
-button.editar {
-    background: #60a5fa;
-    color: #fff;
+button.pendente-btn {
+    background: #facc15;
+    color: #000;
 }
 
-button.editar:hover {
-    background: #3b82f6;
+button.pendente-btn:hover {
+    background: #eab308;
 }
-
