@@ -79,23 +79,68 @@ def atualizar_despesa(id):
     despesa = Despesa.query.get_or_404(id)
     data = request.json
 
-    descricao = data.get("descricao", despesa.descricao)
-    valor = data.get("valor", despesa.valor)
-    data_despesa = data.get("data")
-    categoria_id = data.get("categoria_id", despesa.categoria_id)
+    # --- CAMPOS BÁSICOS ---
+    despesa.descricao = data.get("descricao", despesa.descricao)
+    despesa.valor = float(data.get("valor", despesa.valor))
+    despesa.categoria_id = data.get("categoria_id", despesa.categoria_id)
 
+    # --- TRATAR DATA ---
+    data_despesa = data.get("data")
     if data_despesa:
         try:
-            data_formatada = datetime.strptime(data_despesa, "%d/%m/%Y").date()
+            if "-" in data_despesa:
+                despesa.data = datetime.strptime(data_despesa, "%Y-%m-%d").date()
+            else:
+                despesa.data = datetime.strptime(data_despesa, "%d/%m/%Y").date()
         except ValueError:
-            return jsonify({"erro": "Formato inválido. Use DD/MM/AAAA"}), 400
-    else:
-        data_formatada = despesa.data
+            return jsonify({"erro": "Formato de data inválido"}), 400
 
-    despesa.descricao = descricao
-    despesa.valor = valor
-    despesa.data = data_formatada
-    despesa.categoria_id = categoria_id
+    # --- PARCELADO ---
+    parcelado = data.get("parcelado", despesa.parcelado)
+    qtd_parcelas = int(data.get("qtd_parcelas", despesa.qtd_parcelas))
+    data_inicio = data.get("data_inicio")
+
+    despesa.parcelado = parcelado
+    despesa.qtd_parcelas = qtd_parcelas if parcelado else 1
+
+    # --- SE NÃO FOR PARCELADO, LIMPA PARCELAS ---
+    if not parcelado:
+        Parcela.query.filter_by(despesa_id=id).delete()
+        db.session.commit()
+        return jsonify({"mensagem": f"Despesa {id} atualizada (à vista) com sucesso!"}), 200
+
+    # --- SE FOR PARCELADO, RECRIAR PARCELAS ---
+    if parcelado:
+
+        # validar data_inicio
+        if data_inicio:
+            try:
+                if "-" in data_inicio:
+                    data_inicio_formatada = datetime.strptime(data_inicio, "%Y-%m-%d").date()
+                else:
+                    data_inicio_formatada = datetime.strptime(data_inicio, "%d/%m/%Y").date()
+            except ValueError:
+                return jsonify({"erro": "Formato de data_inicio inválido"}), 400
+        else:
+            data_inicio_formatada = despesa.data
+
+        # remover parcelas antigas
+        Parcela.query.filter_by(despesa_id=id).delete()
+
+        # calcular novo valor parcelado
+        valor_parcela = round(despesa.valor / qtd_parcelas, 2)
+
+        # recriar parcelas
+        for i in range(qtd_parcelas):
+            mes = data_inicio_formatada + relativedelta(months=i)
+
+            nova_parcela = Parcela(
+                despesa_id=id,
+                mes_referencia=mes,
+                valor=valor_parcela,
+                status="pendente"
+            )
+            db.session.add(nova_parcela)
 
     db.session.commit()
 

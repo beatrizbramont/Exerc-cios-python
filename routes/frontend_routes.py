@@ -20,4 +20,4 @@ def  minhasDespesas():
 
 @frontend_bp.route("/despesas/editar/<int:id>")
 def editar_despesa(id):
-    return render_template("editar_despesa.html", id=id)
+    return render_template("despesas.html", id=id)
