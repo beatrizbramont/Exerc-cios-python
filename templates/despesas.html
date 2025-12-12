@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Despesas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/despesas.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <a href="javascript:history.back()" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> 
+    </a>
+</header> 
+<main>
+    <form id="formDespesa">
+        <h1>Controle de Despesas</h1>
+
+        <input type="text" id="descricao" placeholder="Descrição" required>
+
+        <input type="number" id="valor" placeholder="Valor" step="0.01" required>
+
+        <select id="categoria_id" required>
+            <option value="">Selecione a categoria</option>
+        </select>
+
+        <label>Data de vencimento:</label>
+        <input type="date" id="data">
+
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" id="parcelado">
+                Parcelado
+            </label>
+
+            <input
+                type="number"
+                id="qtd_parcelas"
+                placeholder="Total de parcelas"
+                min="1"
+                disabled>
+            
+            <label>Data do primeiro pagamento:</label>
+            <input type="date" id="data_inicio" disabled>
+
+        </div>
+
+        <button type="submit">Salvar Despesa</button>
+    </form>
+
+    <a href="/minhasDespesas" class="menu-card">
+        <i class="fas fa-list"></i>
+        <span>Ver minhas despesas</span>
+    </a>
+</main>
+
+<script src="{{ url_for('static', filename='js/despesas.js') }}"></script>
+
+</body>
+</html>

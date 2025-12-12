@@ -1,0 +1,112 @@
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: #f6f6f6;
+    padding: 30px;
+    background-color: #c29898;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fde6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #fafafa;
+    font-weight: 600;
+    text-align: left;
+    color: #444;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+}
+
+.tabela-parcelas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-parcelas th {
+    background: #ffffff;
+    font-size: 13px;
+    padding: 8px;
+    color: #666;
+}
+
+.tabela-parcelas td {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.tabela-parcelas tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.tabela-parcelas tr:nth-child(odd) {
+    background: #fff;
+}
+
+.parcela.pago {
+    background: #d1fae5 !important; 
+}
+
+.parcela.atrasado {
+    background: #fee2e2 !important;
+}
+
+.parcela.pendente {
+    background: #fef3c7 !important; 
+}
+
+button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+    font-size: 13px;
+    transition: .2s;
+}
+
+/* Botão pagar (verde) */
+button.pagar {
+    background: #4ade80;
+    color: #fff;
+}
+
+button.pagar:hover {
+    background: #22c55e;
+}
+
+/* Botão atrasado (vermelho) */
+button.atrasado-btn {
+    background: #f87171;
+    color: #fff;
+}
+
+button.atrasado-btn:hover {
+    background: #ef4444;
+}
+
+/* Botão editar despesa (azul) */
+button.editar {
+    background: #60a5fa;
+    color: #fff;
+}
+
+button.editar:hover {
+    background: #3b82f6;
+}
+

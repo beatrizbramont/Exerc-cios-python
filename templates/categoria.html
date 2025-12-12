@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorias</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/categorias.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <a href="javascript:history.back()" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> 
+    </a>
+    <a href="" class="btn-cadastDespesa">
+        
+    </a>
+</header>
+<main class="container">
+    <section class="card">
+        <h1>Cadastro de Categorias</h1>
+        <form id="form-categoria">
+            <input type="text" id="nome" placeholder="Nome da categoria" required>
+            <button type="submit">
+                <i class="fa-solid fa-check"></i> Salvar
+            </button>
+        </form>
+    </section>
+    <section class="menu-pos-cadast">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody id="lista-categorias"></tbody>
+        </table>
+    </section>
+
+</main>
+
+<script src="/static/js/categorias.js"></script>
+</body>
+</html>
