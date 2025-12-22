@@ -1,33 +1,35 @@
 body {
-    background: #c29898;
-    color: #333;
+    background: #F5F7FB;
+    color: #1F2937;
     font-family: 'Inter', sans-serif;
 }
 
+/* Botão voltar */
 .btn-voltar {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 12px;
-    background-color: #c29898;
+    padding: 8px 14px;
+    background-color: #2563EB;
     color: #fff;
     border: none;
-    border-radius: 25px;
+    border-radius: 999px;
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s;
-    transform: scale(1.5);
-    }
+    transform: scale(1.15);
+}
 
 .btn-voltar:hover {
-    background-color: #976363;
-    transform: translateX(-3px);
+    background-color: #1D4ED8;
+    transform: translateX(-3px) scale(1.15);
 }
 
 .btn-voltar i {
     font-size: 18px;
 }
 
+/* Layout */
 .container {
     max-width: 900px;
     margin: 40px auto;
@@ -37,21 +39,24 @@ body {
     gap: 30px;
 }
 
+/* Card */
 .card {
-    background: #fde6e6;
+    background: #FFFFFF;
     padding: 30px;
     border-radius: 16px;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 .card h1 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     margin-bottom: 40px;
-    font-size: 40px;
+    font-size: 36px;
+    color: #111827;
 }
 
+/* Form */
 form {
     display: flex;
     gap: 15px;
@@ -61,21 +66,22 @@ input {
     flex: 1;
     padding: 12px 14px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #D1D5DB;
     font-size: 15px;
     outline: none;
 }
 
 input:focus {
-    border-color: #888;
+    border-color: #2563EB;
 }
 
+/* Botões */
 button {
     padding: 12px 22px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    background: #333;
+    background: #2563EB;
     color: white;
     font-weight: 500;
     display: flex;
@@ -85,48 +91,50 @@ button {
 }
 
 button:hover {
-    background: #111;
+    background: #1D4ED8;
 }
 
+/* Tabela */
 table {
   width:100%;
-  background: #fde6e6;
+  background: #FFFFFF;
   border-collapse:collapse;
   font-size:14px;
   overflow:hidden;
-  border-radius:8px;
-  align-items: center;
+  border-radius:12px;
 }
 
 thead th {
   text-align:center;
-  background: #fff8f8;
+  background: #F9FAFB;
   padding:12px 14px;
-  color:#000;
+  color:#111827;
   font-weight:600;
-  border-bottom:1px solid #e6eef4;
+  border-bottom:1px solid #E5E7EB;
 }
 
 tbody td {
   padding:12px 14px;
-  border-bottom:1px solid #f3f6f8;
+  border-bottom:1px solid #F1F5F9;
   vertical-align:middle;
   text-align: center;
 }
 
 tbody tr:nth-child(even) {
-    background:#fbfcfd; 
+    background:#F9FAFB; 
 }
 
 .nome-col { 
     font-weight:500; 
-    color:#0f172a; 
+    color:#111827; 
 }
+
 .acoes-col { 
     width:140px; 
     text-align:center; 
 }
 
+/* Botões de ação */
 .btn-icon {
   display:inline-flex;
   align-items:center;
@@ -138,27 +146,26 @@ tbody tr:nth-child(even) {
   cursor:pointer;
   margin-left:8px;
   transition: background .12s ease, transform .12s ease;
-  color:#0f172a;
-  background:transparent;
 }
 
 .btn-icon i { font-size:14px; }
 
 .btn-edit {
-  background: #dce2f7;
-  color: #3730a3;
+  background: #E0E7FF;
+  color: #3730A3;
 }
 
 .btn-edit:hover { 
     transform: translateY(-2px); 
-    background:#e0e7ff; }
+    background:#C7D2FE; 
+}
 
 .btn-delete {
-  background: #fcd7d9;
-  color: #b91c1c;
+  background: #FEE2E2;
+  color: #B91C1C;
 }
 
 .btn-delete:hover { 
     transform: translateY(-2px); 
-    background:#e9d0d1; 
+    background:#FECACA; 
 }

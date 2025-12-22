@@ -1,52 +1,56 @@
 body {
     font-family: Inter, Arial, sans-serif;
-    background: #c29898;
+    background: #F5F7FB;
     padding: 30px;
-    color: #333;
+    color: #1F2937;
 }
 
 h1 {
     margin-bottom: 25px;
     font-weight: 700;
-    color: #4a2c2c;
+    color: #111827;
 }
 
+/* Tabela principal */
 table {
     width: 100%;
     border-collapse: collapse;
-    background: #fde6e6;
-    border-radius: 12px;
+    background: #FFFFFF;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
 th {
-    background: #fff2f2;
+    background: #F9FAFB;
     font-weight: 600;
     text-align: left;
-    color: #552929;
+    color: #111827;
     font-size: 15px;
 }
 
 th, td {
     padding: 14px 18px;
-    border-bottom: 1px solid #f3d4d4;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 tbody tr:hover {
-    background: #ffecec;
+    background: #F3F4F6;
 }
 
+/* Status */
 .nao-parcelado {
-    background: #fef3c7;
+    background: #FEF3C7;
     padding: 4px 8px;
     font-size: 12px;
     border-radius: 6px;
     display: inline-block;
+    color: #92400E;
 }
 
+/* Botões tabela */
 button.ver-parcelas {
-    background: #d97706;
+    background: #2563EB;
     color: #fff;
     padding: 7px 12px;
     font-weight: 500;
@@ -54,18 +58,19 @@ button.ver-parcelas {
 }
 
 button.ver-parcelas:hover {
-    background: #b45309;
+    background: #1D4ED8;
 }
 
 button.editar {
-    background: #60a5fa;
+    background: #38BDF8;
     color: #fff;
 }
 
 button.editar:hover {
-    background: #3b82f6;
+    background: #0EA5E9;
 }
 
+/* Modal */
 #modal-parcelas {
     display: none;
     position: fixed;
@@ -81,15 +86,15 @@ button.editar:hover {
 }
 
 .modal-content {
-    background: #c29898;
+    background: #FFFFFF;
     margin: auto;
-    padding: 20px;
-    border-radius: 14px;
+    padding: 24px;
+    border-radius: 16px;
     width: 70%;
     max-width: 800px;
     max-height: 70vh; 
     overflow-y: auto; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     animation: aparecer 0.3s ease;
 }
 
@@ -108,28 +113,29 @@ button.editar:hover {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 18px;
-    color: #4a2c2c;
+    color: #111827;
 }
 
 .modal-fechar {
     float: right;
     font-size: 22px;
     cursor: pointer;
-    color: #333;
+    color: #374151;
     font-weight: bold;
 }
 
 .modal-fechar:hover {
-    color: #b91c1c;
+    color: #B91C1C;
 }
 
+/* Tabela modal */
 .modal-table {
     width: 100%;
     border-collapse: collapse;
 }
 
 .modal-table th {
-    background: #f2f2f2;
+    background: #F9FAFB;
     font-size: 14px;
 }
 
@@ -139,21 +145,23 @@ button.editar:hover {
 }
 
 .modal-table tr:nth-child(even) {
-    background: #fafafa;
+    background: #F9FAFB;
 }
 
+/* Estados das parcelas */
 .parcela.pago {
-    background: #d1fae5 !important;
+    background: #D1FAE5 !important;
 }
 
 .parcela.atrasado {
-    background: #fee2e2 !important;
+    background: #FEE2E2 !important;
 }
 
 .parcela.pendente {
-    background: #fef3c7 !important;
+    background: #FEF3C7 !important;
 }
 
+/* Botões gerais */
 button {
     border: none;
     padding: 6px 10px;
@@ -165,28 +173,28 @@ button {
 }
 
 button.pagar {
-    background: #4ade80;
+    background: #22C55E;
     color: #fff;
 }
 
 button.pagar:hover {
-    background: #22c55e;
+    background: #16A34A;
 }
 
 button.atrasado-btn {
-    background: #f87171;
+    background: #EF4444;
     color: #fff;
 }
 
 button.atrasado-btn:hover {
-    background: #ef4444;
+    background: #DC2626;
 }
 
 button.pendente-btn {
-    background: #facc15;
+    background: #FACC15;
     color: #000;
 }
 
 button.pendente-btn:hover {
-    background: #eab308;
+    background: #EAB308;
 }

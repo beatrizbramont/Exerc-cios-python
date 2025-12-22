@@ -5,23 +5,23 @@
 }
 
 body {
-    background-color: #0f172a;
-    color: #ffe3e3;
+    background-color: #F4F6FB; 
+    color: #1F2937; 
     font-family: 'Inter', sans-serif;
 }
 
 .header {
-    background: #6237ac;
+    background: linear-gradient(180deg, #5b5d7c, #3b4147);
     padding: 25px;
     text-align: center;
-    border-bottom: 1px solid #ffffff;
-    box-shadow: 0 0 40px rgb(207, 172, 247);
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .header h1 {
     font-size: 28px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
+    color: #E5E7EB;
 }
 
 .menu {
@@ -35,30 +35,30 @@ body {
 
 .menu-card {
     text-decoration: none;
-    background: #ebdcff;
-    border: 1px solid #e1e1e1;
+    background: #acb2d6;
+    border: 1px solid #E5E7EB;
     padding: 35px 20px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    color: #333;
+    color: #1F2937;
     font-weight: 500;
     font-size: 17px;
-    transition: all 0.2s ease;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.02);
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .menu-card i {
     font-size: 30px;
-    color: #555;
+    color: #2563EB; 
 }
 
 .menu-card:hover {
     transform: translateY(-6px);
-    border-color: #bbb;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+    border-color: #2563EB;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
 }
 
 .menu-card span {
