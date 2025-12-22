@@ -1,171 +1,210 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
 body {
-    background: #F5F7FB;
+    background: #F5F7FA;
     color: #1F2937;
     font-family: 'Inter', sans-serif;
 }
 
-/* Botão voltar */
+/* BOTÃO VOLTAR */
 .btn-voltar {
-    display: inline-flex;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    background-color: #2563EB;
+    justify-content: center;
+
+    background-color: #065F46;
     color: #fff;
-    border: none;
-    border-radius: 999px;
-    cursor: pointer;
+
+    border-radius: 50%;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
-    transform: scale(1.15);
+
+    box-shadow: 0 8px 20px rgba(6, 95, 70, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn-voltar:hover {
-    background-color: #1D4ED8;
-    transform: translateX(-3px) scale(1.15);
+    background-color: #064E3B;
+    transform: translateX(-4px);
 }
 
 .btn-voltar i {
     font-size: 18px;
 }
 
-/* Layout */
+/* CONTAINER */
 .container {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 880px;
+    margin: 120px auto 60px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 32px;
 }
 
-/* Card */
+/* CARD PRINCIPAL */
 .card {
     background: #FFFFFF;
-    padding: 30px;
-    border-radius: 16px;
+    padding: 36px;
+    border-radius: 18px;
     border: 1px solid #E5E7EB;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    position: relative;
 }
 
+/* DETALHE SUPERIOR */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #10B981, #34D399);
+    border-radius: 18px 18px 0 0;
+}
+
+/* TÍTULO */
 .card h1 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
-    color: #111827;
+    margin-bottom: 36px;
+    font-size: 34px;
+    color: #064E3B;
+    letter-spacing: -0.5px;
 }
 
-/* Form */
+/* FORM */
 form {
     display: flex;
-    gap: 15px;
+    gap: 16px;
+    align-items: center;
 }
 
+/* INPUT */
 input {
     flex: 1;
-    padding: 12px 14px;
-    border-radius: 10px;
+    padding: 14px 16px;
+    border-radius: 12px;
     border: 1px solid #D1D5DB;
     font-size: 15px;
     outline: none;
+    background: #F9FAFB;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: #9CA3AF;
 }
 
 input:focus {
-    border-color: #2563EB;
+    border-color: #10B981;
+    box-shadow: 0 0 0 4px rgba(16,185,129,0.18);
 }
 
-/* Botões */
+/* BOTÃO SALVAR */
 button {
-    padding: 12px 22px;
-    border-radius: 10px;
+    padding: 14px 26px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
-    background: #2563EB;
+
+    background: linear-gradient(135deg, #10B981, #059669);
     color: white;
-    font-weight: 500;
+
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 6px;
-    transition: 0.2s ease;
+    gap: 8px;
+
+    box-shadow: 0 10px 24px rgba(16,185,129,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(16,185,129,0.55);
 }
 
-/* Tabela */
 table {
-  width:100%;
-  background: #FFFFFF;
-  border-collapse:collapse;
-  font-size:14px;
-  overflow:hidden;
-  border-radius:12px;
+    width: 100%;
+    background: #FFFFFF;
+    border-collapse: collapse;
+    font-size: 14px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
 }
 
 thead th {
-  text-align:center;
-  background: #F9FAFB;
-  padding:12px 14px;
-  color:#111827;
-  font-weight:600;
-  border-bottom:1px solid #E5E7EB;
+    text-align: center;
+    background: #F9FAFB;       
+    padding: 14px;
+    color: #1F2937;
+    font-weight: 600;
+    border-bottom: 2px solid #10B981; 
 }
 
 tbody td {
-  padding:12px 14px;
-  border-bottom:1px solid #F1F5F9;
-  vertical-align:middle;
-  text-align: center;
+    padding: 14px;
+    border-bottom: 1px solid #E5E7EB;
+    text-align: center;
+    color: #374151;
 }
 
 tbody tr:nth-child(even) {
-    background:#F9FAFB; 
+    background: #F9FAFB;
 }
 
-.nome-col { 
-    font-weight:500; 
-    color:#111827; 
+.nome-col {
+    font-weight: 500;
+    color: #064E3B;
 }
 
-.acoes-col { 
-    width:140px; 
-    text-align:center; 
+.acoes-col {
+    width: 140px;
 }
 
-/* Botões de ação */
 .btn-icon {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:36px;
-  height:36px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  margin-left:8px;
-  transition: background .12s ease, transform .12s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn-icon i { font-size:14px; }
+.btn-icon:hover {
+    transform: translateY(-2px);
+}
 
 .btn-edit {
-  background: #E0E7FF;
-  color: #3730A3;
-}
-
-.btn-edit:hover { 
-    transform: translateY(-2px); 
-    background:#C7D2FE; 
+    background: #D1FAE5;
+    color: #065F46;
+    box-shadow: 0 6px 14px rgba(16,185,129,0.25);
 }
 
 .btn-delete {
-  background: #FEE2E2;
-  color: #B91C1C;
-}
-
-.btn-delete:hover { 
-    transform: translateY(-2px); 
-    background:#FECACA; 
+    background: #FEE2E2;
+    color: #991B1B;
+    box-shadow: 0 6px 14px rgba(239,68,68,0.25);
 }

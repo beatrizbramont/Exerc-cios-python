@@ -5,62 +5,69 @@
 }
 
 body {
-    background-color: #F4F6FB; 
-    color: #1F2937; 
+    background-color: #F6F7FB;
+    color: #1F2937;
     font-family: 'Inter', sans-serif;
 }
 
+/* ===== HEADER ===== */
 .header {
-    background: linear-gradient(180deg, #5b5d7c, #3b4147);
-    padding: 25px;
+    background: linear-gradient(135deg, #065F46, #10B981);
+    padding: 30px 20px;
     text-align: center;
-    border-bottom: 1px solid #E5E7EB;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
 }
 
 .header h1 {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    color: #E5E7EB;
+    color: #ECFDF5;
 }
 
+/* ===== MENU ===== */
 .menu {
-    max-width: 900px;
-    margin: 250px auto;
+    max-width: 1000px;
+    margin: 90px auto; /* 👈 antes tava exagerado */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 0 20px;
+    gap: 28px;
+    padding: 0 24px;
 }
 
+/* ===== CARD ===== */
 .menu-card {
     text-decoration: none;
-    background: #acb2d6;
-    border: 1px solid #E5E7EB;
-    padding: 35px 20px;
-    border-radius: 16px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    padding: 38px 22px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
-    color: #1F2937;
+    gap: 16px;
+    color: #065F46;
     font-weight: 500;
     font-size: 17px;
     transition: all 0.25s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border: 1px solid #E5E7EB;
 }
 
+/* ÍCONE */
 .menu-card i {
-    font-size: 30px;
-    color: #2563EB; 
+    font-size: 34px;
+    color: #10B981;
 }
 
+/* HOVER */
 .menu-card:hover {
-    transform: translateY(-6px);
-    border-color: #2563EB;
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 38px rgba(16, 185, 129, 0.25);
+    border-color: #10B981;
 }
 
+/* TEXTO */
 .menu-card span {
     text-align: center;
+    color: #064E3B;
 }
